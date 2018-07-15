@@ -1,3 +1,3 @@
 # My Portfolio
 
-~~Its pretty basic, I know *cries*~~
+~~Its pretty basic, I know~~
