@@ -38,6 +38,15 @@ html, body {
 .none {
   display: none;
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 #bmo {
   position: absolute;
 }
@@ -140,6 +149,25 @@ output {
 }
 #ans {
   line-height: 120.03px;
+}
+#arrowLeft, #arrowRight {
+  display: none;
+  width: 21px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  position: absolute;
+  bottom: 37px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+#arrowLeft {
+  left: -15px;
+  border-right: 20px solid #153f33;
+}
+#arrowRight {
+  right: -15px;
+  border-left: 20px solid #153f33;
 }
 .errorS {
   overflow: hidden;

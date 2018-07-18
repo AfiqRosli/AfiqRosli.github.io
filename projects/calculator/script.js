@@ -150,6 +150,10 @@ window.onload = (function () {
     }
   }
   
+  function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+  }
+  
   document.onclick = function (e) {
     var clicked = e.target,
       history = document.getElementById("history"),
@@ -157,6 +161,8 @@ window.onload = (function () {
       input = document.getElementsByTagName("input"),
       ac = document.getElementById("AC").parentElement,
       ce = document.getElementById("CE").parentElement,
+      arrowLeft = document.getElementById("arrowLeft"),
+      arrowRight = document.getElementById("arrowRight"),
       ans;
     
     if (display.classList.contains("errorS") ||
@@ -167,7 +173,6 @@ window.onload = (function () {
     
     display.classList.remove("errorS");
     display.classList.remove("errorL");
-    
     
     window.onerror = function (){
       display.innerHTML = "Syntax Error";
@@ -261,10 +266,32 @@ window.onload = (function () {
       display.innerHTML = calculation;
     }
     
-    /* auto-scroll horizonal */
-    display.scrollLeft = display.scrollWidth - display.clientWidth;
-    history.scrollLeft = history.scrollWidth - history.clientWidth;
+    if (clicked.id === "arrowLeft") {
+      display.scrollLeft -= 20;
+    } else if (clicked.id === "arrowRight") {
+      display.scrollLeft += 20;
+    } else if (clicked.id !== "screen" &&
+               clicked.id !== "ans") {
+      /* auto-scroll horizonal */
+      display.scrollLeft = display.scrollWidth - display.clientWidth;
+      history.scrollLeft = history.scrollWidth - history.clientWidth;      
+    }
     
+    if (display.scrollWidth === display.clientWidth) {
+      arrowLeft.style.display = "none";
+      arrowRight.style.display = "none";
+    } else if (display.scrollLeft === 0) {
+      arrowLeft.style.display = "none";
+      arrowRight.style.display = "block";
+    } else if (Math.floor(display.scrollLeft) +
+               display.clientWidth + 2 > display.scrollWidth) {
+      arrowLeft.style.display = "block";
+      arrowRight.style.display = "none";
+    } else {
+      arrowLeft.style.display = "block";
+      arrowRight.style.display = "block";
+    }
+        
     checkLastChar(input, display);
   };
 

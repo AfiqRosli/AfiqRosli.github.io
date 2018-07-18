@@ -10,14 +10,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.2/math.js" integrity="sha256-4tqurYDBE4uEsHrXqXFy1gAE0/dHareOvkFHqtrDyLg=" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="wrapper center">
+    <div class="wrapper center noselect">
       <div class="container">
         <div id="bmo">BMO</div>
         <div class="calculation">
           <div>
             <output id="history"></output>
           </div>
-          <div>
+          <div id="screen">
+            <div id="arrowLeft"></div>
+            <div id="arrowRight"></div>
             <output id="ans">0</output>
           </div>
         </div>
