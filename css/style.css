@@ -151,20 +151,16 @@ Modular Styles
   text-align: center; 
 }
 /***************
-Header
-***************/
-
-/***************
 Intro
 ***************/
 #intro figure {
   width: 100px;
-  height: 100%;
+  height: auto;
   float: none;
   overflow: hidden;
   margin: 0 auto;
   margin-bottom: 3%;
-  border-radius: 100%;
+  border-radius: 10%;
   border: 2px solid #033313;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -172,7 +168,7 @@ Intro
   transition: all 0.5s ease-in-out;
 }
 #intro img {
-  width: 100px;
+  width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -215,10 +211,10 @@ Skills
   width: 80%;
 }
 #skills div:nth-of-type(1) li:nth-child(2) div:after {
-  width: 65%;
+  width: 70%;
 }
 #skills div:nth-of-type(1) li:last-child div:after {
-  width: 50%;
+  width: 60%;
 }
 #skills div:nth-of-type(2) li:first-child div:after {
   width: 30%;
@@ -227,10 +223,10 @@ Skills
   width: 10%;
 }
 #skills div:nth-of-type(2) li:nth-child(3) div:after {
-  width: 40%;
+  width: 60%;
 }
 #skills div:nth-of-type(2) li:nth-child(4) div:after {
-  width: 50%;
+  width: 45%;
 }
 #skills div:nth-of-type(2) li:last-child div:after {
   width: 10%;

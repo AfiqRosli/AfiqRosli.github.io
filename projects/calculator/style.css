@@ -203,4 +203,9 @@ Media Queries
   #ans {
     line-height: 84.86px;
   }
+  #arrowLeft, #arrowRight {
+    bottom: 22px;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+  }
 }

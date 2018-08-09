@@ -6,7 +6,7 @@ window.onload = function () {
   var text = ["Programmer", "Learner", "Student", "Cook", "Developer"];
   var counter = 0;
   var elem = document.getElementById("changeText");
-  var inst = setInterval(change, 1200);
+  var inst = setInterval(change, 1500);
   
   function change() {
     elem.innerHTML = text[counter];
@@ -14,7 +14,7 @@ window.onload = function () {
     
     if (counter === text.length) {
       counter = 0;
-      /*clearInterval(inst);*/
+      clearInterval(inst);
     }
   }
   
