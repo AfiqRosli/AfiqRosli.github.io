@@ -155,12 +155,12 @@ Intro
 ***************/
 #intro figure {
   width: 100px;
-  height: auto;
+  height: 100px;
   float: none;
   overflow: hidden;
   margin: 0 auto;
   margin-bottom: 3%;
-  border-radius: 10%;
+  border-radius: 100%;
   border: 2px solid #033313;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -168,7 +168,7 @@ Intro
   transition: all 0.5s ease-in-out;
 }
 #intro img {
-  width: 100%;
+  width: 100px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -334,6 +334,7 @@ Media Queries
   }
   #intro figure {
     width: 150px;
+    height: 150px;
     float: left;
     margin: 0;
     margin-right: 5%;
@@ -345,6 +346,7 @@ Media Queries
 @media (min-width: 859px) {
   #intro figure {
     width: 200px;
+    height: 200px;
   }
 
   #intro img {
