@@ -1,98 +1,108 @@
-<!--
-Author: Afiq Rosli
-Date created: 16/1/18
-About: My portfolio
--->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Afiq Rosli</title>
-    <link href="css/meyerweb-reset.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Afiq Rosli | CV</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <header class="wrapper">
-      <h1>I'm a <span id="changeText">Developer</span></h1>
+
+    <!-- Start of Main Header -->
+    <header>
+      <figure>
+        <img src="img/Afiq.png" alt="Afiq Rosli">
+      </figure>
+      <div id="intro">
+        <h1>Afiq Rosli</h1>
+        <!-- <p>Developer</p> -->
+        <p>I aspire to be a full-stack developer and a software-engineer; Jack of all trades, master of some.</p>
+      </div>
+      <!-- <p>I aspire to be a full-stack developer and a software-engineer; Jack of all trades, master of some.</p> -->
     </header>
-    
-    <main class="wrapper">
-      <section id="intro" class="grouping">
-        <h2>About Me</h2>
+    <!-- End of Main Header -->
 
-        <figure class="grouping">
-          <img src="images/me_at_gongCha.jpg" alt="Afiq Rosli" class="float-left grouping">
-        </figure>
+    <!-- Start of Main Content; 2 sections -->
+    <main>
+      <div id="rightColumn">
+        <section>
+          <h2>Profile</h2>
+          <p><strong>Full Name:</strong> Muhamad Afiq bin Rosli</p>
+          <p><strong>Interest:</strong> Full-stack Development, Responsive Design, Mobile Development,
+            Security</p>
+        </section>
 
-        <div>
-          <p>Afiq Rosli, I'm still a newbie in the world of coding. I aspire to be a full-stack developer and a software-engineer; Jack of all trades, master of some.</p>
-        </div>
-        
-      </section>
+        <section>
+          <h2>Education</h2>
+          <ol>
+            <li><strong>Southampton Solent University</strong>, Southampton, England
+              <p><strong><em>Bsc (Hons) Computing with Foundation</em></strong>, 2016 – 2017 (transferred)</p>
+            </li>
+            <li><strong>Laksamana College of Business</strong>, Brunei Darussalam
+              <p><strong><em>Bsc (Hons) Computer Science</em></strong>, 2018 – current (second year)</p>
+            </li>
+          </ol>
+        </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        
-        <p>I know basic web development and a little bit of C, C++, JavaScript, Java, VBA &amp; Python.</p>
+        <section>
+          <h2>Projects</h2>
+          <ol>
+            <li><a href="https://codepen.io/AfiqRosli/full/YEpGNy" target="_blank"><span class="fas fa-long-arrow-alt-right"></span><strong>Words Overdue</strong></a>, November 2017
+              <p>A typing game that runs on the browser; written in JavaScript. The
+                player has three lives, and they need to type the displayed words,
+                before they ran out of time and lives.</p>
+            </li>
+            <li><a href="https://codepen.io/AfiqRosli/full/oooZzL" target="_blank"><strong><span class="fas fa-long-arrow-alt-right"></span>Paddle Ball Brick Game</strong></a>, November 2017
+              <p>Classic game written using HTML canvas. The primary objective is to break all the bricks! There are only
+              3 lives.</p>
+            </li>
+            <li><a href="https://codepen.io/AfiqRosli/full/XBmvpz" target="_blank"><strong><span class="fas fa-long-arrow-alt-right"></span>BMO Calculator</strong></a>, July 2018
+              <p>A web-based calculator, that resized on a smaller screen, and is
+                themed as BMO from the cartoon, Adventure Time. Math.js library is
+                implemented for the calculations.</p>
+            </li>
+            <li><a href="https://github.com/AfiqRosli/unit-conversions" target="_blank"><strong><span class="fas fa-long-arrow-alt-right"></span>Unit Conversions</strong></a>, August 2018
+              <p>A Java application with a graphical user interface (GUI), which
+                converts units of the same or different systems (i.e. SI and
+                Imperial), of the same quantity.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section id="leftColumn">
+        <h2>Technical Skills</h2>
 
         <h3>Web Development</h3>
-        
-        <div>
-          <ul>
-            <li>HTML<div></div></li>
-            <li>CSS<div></div></li>
-            <li>JavaScript<div></div></li>
-          </ul>
-        </div>
-        
-        <h3>Programming</h3>
-        
-        <div>
-          <ul>
-            <li>C<div></div></li>
-            <li>C++<div></div></li>
-            <li>Java<div></div></li>
-            <li>Visual Basic for Application (VBA)<div></div></li>
-            <li>Python<div></div></li>
-          </ul>
-        </div>
-        
-        <p><span></span> - Confidence level<br />Full Confidence != Skill Mastery</p>
-        
-        <p>Currently, I'm focusing on Java</p>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        
         <ul>
-          <li><a href="projects/wordsOverdue/index.html" target="_blank"><span class="fas fa-long-arrow-alt-right"></span>Words Overdue</a></li>
-          <li><a href="projects/paddleBallBrickGame/index.html" target="_blank"><span class="fas fa-long-arrow-alt-right"></span>Paddle Ball Brick Game</a></li>
-          <li><a href="projects/calculator/min/index.min.html" target="_blank"><span class="fas fa-long-arrow-alt-right"></span>BMO Calculator</a></li>
-          <li><a href="https://github.com/AfiqRosli/unit-conversions" target="_blank"><span class="fas fa-long-arrow-alt-right"></span>Unit Conversions</a></li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScipt</li>
+          <li>Bootstrap</li>
+          <li>PHP</li>
+          <li>ASP.NET</li>
         </ul>
-      </section>
-    </main>
-    
-    <footer class="grouping">
-      <ul>
-        <li class="list-heading">Social Media</li>
-        <li><a href="https://twitter.com/AfiqRosli_19" target="_blank"><span class="fab fa-twitter"></span>Twitter</a></li>
-        <li><a href="https://www.instagram.com/afiq_rosli.97/" target="_blank"><span class="fab fa-instagram"></span>Instagram</a></li>
-      </ul>
 
-      <ul>
-        <li class="list-heading"><span></span>Interwebs</li>
-        <li><a href="https://github.com/AfiqRosli?tab=followers" target="_blank"><span class="fab fa-github"></span>GitHub</a></li>
-        <li><a href="https://codepen.io/AfiqRosli/" target="_blank"><span class="fab fa-codepen"></span>Codepen</a></li>
-        <li><a href="https://www.hackerrank.com/afiq_rosli?hr_r=1" target="_blank"><span class="fab fa-hackerrank"></span>Hackerrank</a></li>
-        <li><a href="https://stackoverflow.com/users/8782422/afiq-rosli" target="_blank"><span class="fab fa-stack-overflow"></span>Stackoverflow</a></li>
-      </ul>
-    </footer>
-    
-    <script src="js/script.js"></script>
+        <h3>Programming Languages</h3>
+        <ul>
+          <li>Java</li>
+          <li>C#</li>
+          <li>VBA</li>
+        </ul>
+
+        <footer>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/afiq_rosli.97/" target="_blank"><span class="fab fa-instagram"></span>Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/afiq-rosli-3a5837180/" target="_blank"><span class="fab fa-linkedin"></span>Linkedin</a></li>
+            <li><a href="https://twitter.com/AfiqRosli_19" target="_blank"><span class="fab fa-twitter"></span>Twitter</a></li>
+          </ul>
+        </footer>
+      </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

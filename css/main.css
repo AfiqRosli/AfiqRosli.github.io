@@ -1,0 +1,181 @@
+/*General*/
+html, body, main {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+li, p {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Header*/
+header {
+    position: relative;
+    background-color: #77c7c4;
+    padding: 1em 0;
+}
+
+figure {
+    width: 20%;
+    margin: 0 15%;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 100%;
+    background-color: #e5efd4;
+}
+
+h1, header p {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 24px;
+    font-family: monospace;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#intro {
+    position: absolute;
+    width: 50%;
+    top: 26%;
+    left: 43%;
+}
+
+/*Technical Skills & Contact*/
+#leftColumn {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-color: #e5efd4;
+}
+
+    #leftColumn h2, h3 {
+        margin: 5%;
+        border-bottom: 2px solid black;
+    }
+
+    #leftColumn span {
+        margin-right: 2%;
+    }
+
+    #leftColumn li {
+        margin: 2% 5%;
+    }
+
+        #leftColumn li:last-of-type {
+            margin-bottom: 10%;
+        }
+
+    #leftColumn a {
+        color: #7d9257;
+    }
+
+        #leftColumn a:hover {
+            color: #4f6528;
+        }
+
+/*Main Highlights*/
+#rightColumn {
+    float: right;
+    width: 50%;
+}
+
+    #rightColumn > section {
+        margin: 5%;
+        padding-bottom: 2%;
+    }
+
+    #rightColumn section {
+        background-color: #f5f5f5;
+    }
+
+    #rightColumn h2 {
+        margin-bottom: 2%;
+        padding: 2%;
+        background-color: #77c7c4;
+    }
+
+    #rightColumn span {
+        margin-right: 1%;
+    }
+
+    #rightColumn a {
+        color: #77c7c4;
+        background: linear-gradient(0deg, currentcolor, currentcolor) bottom left no-repeat;
+        background-size: 0px 3px;
+        transition: 0.25s;
+        padding-bottom: 2px;
+    }
+
+        #rightColumn a:hover {
+            color: #1d7875;
+            background-size: 100% 3px;
+        }
+
+    #rightColumn section:first-child p {
+        margin-bottom: 2%;
+    }
+
+        #rightColumn section:first-child p:last-child {
+            margin-bottom: 0;
+        }
+
+    #rightColumn p, #rightColumn li {
+        margin: 0 2%;
+        font-size: 16px;
+    }
+
+        #rightColumn li p {
+            margin-left: 6%;
+            margin-top: 2%;
+            margin-bottom: 6%;
+        }
+
+        #rightColumn li:last-of-type p {
+            margin-bottom: 0;
+        }
+
+    #rightColumn a {
+        color: black;
+    }
+
+/*
+page design reference: https://www.shutterstock.com/image-vector/creative-resume-cv-design-792195778
+
+Background colors:
+Blue - #77c7c4
+Light Green - #e5efd4
+
+Link colors:
+color; natural; hover
+Green; #7d9257;
+Blue; #77c7c4; #1d7875
+*/
