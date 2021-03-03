@@ -10,13 +10,15 @@
       </v-card-text>
 
       <v-card-subtitle class="text-right pa-0 pr-4 pb-2">
-        {{ date }}
+        {{ dayjs(date).format("H:mm A") }}
       </v-card-subtitle>
     </v-card>
   </div>
 </template>
 
 <script>
+import dayjs from "dayjs";
+
 export default {
   props: {
     justify: {
@@ -31,6 +33,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      dayjs
+    };
   }
 };
 </script>
