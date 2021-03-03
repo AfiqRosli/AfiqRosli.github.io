@@ -5,9 +5,21 @@
         <v-col class="h-100" offset="1" cols="10">
           <div class="d-flex flex-column justify-end px-0 px-sm-10 pb-14 h-100">
             <div>
-              <Date date="20210303" />
-              <ChatMe msg="Hello!" date="20210303" />
-              <ChatYou msg="Hi!" date="20210303" />
+              <div v-for="(chat, index) in chats" :key="index">
+                <template v-if="chat.type == enums.Chat.DATE">
+                  <When :date="chat.date" />
+                </template>
+
+                <template v-if="chat.type == enums.Chat.TEXT">
+                  <template v-if="chat.person == enums.Person.ME">
+                    <ChatMe :msg="chat.msg" :date="chat.date" />
+                  </template>
+
+                  <template v-if="chat.person == enums.Person.YOU">
+                    <ChatYou :msg="chat.msg" :date="chat.date" />
+                  </template>
+                </template>
+              </div>
             </div>
           </div>
         </v-col>
