@@ -33,11 +33,39 @@
 <script>
 import ChatMe from "@/components/ChatMe";
 import ChatYou from "@/components/ChatYou";
-import Date from "@/components/Date";
+import When from "@/components/When";
 import Selection from "@/components/Selection";
+import Chat from "@/enums/Chat";
+import Person from "@/enums/Person";
 
 export default {
   name: "Home",
-  components: { ChatMe, ChatYou, Date, Selection }
+  components: { ChatMe, ChatYou, When, Selection },
+  data() {
+    return {
+      chats: [
+        {
+          type: Chat.DATE,
+          date: new Date().toISOString()
+        },
+        {
+          type: Chat.TEXT,
+          person: Person.ME,
+          date: new Date().toISOString(),
+          msg: "Hello!"
+        },
+        {
+          type: Chat.TEXT,
+          person: Person.YOU,
+          date: new Date().toISOString(),
+          msg: "CV"
+        }
+      ],
+      enums: {
+        Chat,
+        Person
+      }
+    };
+  }
 };
 </script>
