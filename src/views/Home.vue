@@ -37,6 +37,7 @@ import When from "@/components/When";
 import Selection from "@/components/Selection";
 import Chat from "@/enums/Chat";
 import Person from "@/enums/Person";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -48,6 +49,13 @@ export default {
         Person
       }
     };
+  },
+  computed: mapState({
+    chats: state => state.chats
+  }),
+  methods: {
+    ...mapActions(["addChat", "replaceLoading"])
+  },
   }
 };
 </script>
