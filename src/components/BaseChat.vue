@@ -6,6 +6,7 @@
       </v-card-title>
 
       <v-card-text class="font-weight-bold font__size">
+        <span v-html="msg"></span>
       </v-card-text>
 
       <v-card-subtitle class="text-right pa-0 pr-4 pb-2">
