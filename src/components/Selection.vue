@@ -105,12 +105,11 @@ export default {
         });
       }, 2300);
 
-      // after 18.5 seconds stop; 2.3 * 8 + 100 = 18.5
-      // 2.3 * 8 is 8 chat content
-      // Add 100 millisecond to give time for the 9th chat appear
+      // after 20.7 seconds stop
+      // 2.3 * 9 as in 9 chat content at 2.3s interval
       setTimeout(() => {
         clearInterval(chatTimer);
-      }, 18500);
+      }, 20700);
     }
   }
 };
