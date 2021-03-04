@@ -22,7 +22,11 @@
 </template>
 
 <script>
-export default {};
+import Chat from "@/enums/Chat";
+import Person from "@/enums/Person";
+import ChatFactory from "@/factories/ChatFactory";
+import { mapActions } from "vuex";
+
 </script>
 
 <style lang="scss" scoped>
