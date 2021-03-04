@@ -43,24 +43,6 @@ export default {
   components: { ChatMe, ChatYou, When, Selection },
   data() {
     return {
-      chats: [
-        {
-          type: Chat.DATE,
-          date: new Date().toISOString()
-        },
-        {
-          type: Chat.TEXT,
-          person: Person.ME,
-          date: new Date().toISOString(),
-          msg: "Hello!"
-        },
-        {
-          type: Chat.TEXT,
-          person: Person.YOU,
-          date: new Date().toISOString(),
-          msg: "CV"
-        }
-      ],
       enums: {
         Chat,
         Person
