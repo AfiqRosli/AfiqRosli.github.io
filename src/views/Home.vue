@@ -37,6 +37,7 @@ import When from "@/components/When";
 import Selection from "@/components/Selection";
 import Chat from "@/enums/Chat";
 import Person from "@/enums/Person";
+import ChatFactory from "@/factories/ChatFactory";
 import { mapState, mapActions } from "vuex";
 
 export default {
@@ -56,6 +57,28 @@ export default {
   methods: {
     ...mapActions(["addChat", "replaceLoading"])
   },
+  mounted() {
+    this.$nextTick(async () => {
+      if (this.chats.length == 0) {
+        await this.addChat(new ChatFactory(Chat.DATE));
+        await this.addChat(
+          new ChatFactory(Chat.TEXT, {
+            person: Person.ME,
+            msg: "Hello!"
+          })
+        );
+        await this.addChat(new ChatFactory(Chat.LOADING));
+
+        setTimeout(async () => {
+          await this.replaceLoading(
+            new ChatFactory(Chat.TEXT, {
+              person: Person.ME,
+              msg: "What would you like to know?"
+            })
+          );
+        }, 1500);
+      }
+    });
   }
 };
 </script>
