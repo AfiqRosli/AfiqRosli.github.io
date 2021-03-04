@@ -5,8 +5,7 @@
         <slot></slot>
       </v-card-title>
 
-      <v-card-text class="headline font-weight-bold">
-        {{ msg }}
+      <v-card-text class="font-weight-bold font__size">
       </v-card-text>
 
       <v-card-subtitle class="text-right pa-0 pr-4 pb-2">
@@ -42,4 +41,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.font__size {
+  font-size: 1.1rem;
+}
+</style>
