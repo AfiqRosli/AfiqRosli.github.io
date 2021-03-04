@@ -67,22 +67,44 @@ export default {
     this.$nextTick(async () => {
       if (this.chats.length == 0) {
         await this.addChat(new ChatFactory(Chat.DATE));
-        await this.addChat(
-          new ChatFactory(Chat.TEXT, {
-            person: Person.ME,
-            msg: "Hello!"
-          })
-        );
+
+        this.$vuetify.goTo(9999, {
+          duration: 700,
+          easing: "easeInCubic"
+        });
+
+        let count = 0;
+        let chatContent = [
+          "Hello!",
+          "Welcome to my website",
+          "What would you like to know?"
+        ];
         await this.addChat(new ChatFactory(Chat.LOADING));
 
-        setTimeout(async () => {
+        // repeat with the interval of 1.7 seconds
+        let chatTimer = setInterval(async () => {
           await this.replaceLoading(
             new ChatFactory(Chat.TEXT, {
               person: Person.ME,
-              msg: "What would you like to know?"
+              msg: chatContent[count++]
             })
           );
-        }, 1500);
+
+          if (count < chatContent.length) {
+            await this.addChat(new ChatFactory(Chat.LOADING));
+          }
+
+          this.$vuetify.goTo(9999, {
+            duration: 700,
+            easing: "easeInCubic"
+          });
+        }, 1700);
+
+        // after 5.1 seconds stop
+        // 1.7 * 3 as in 3 chat content at 1.7s interval
+        setTimeout(() => {
+          clearInterval(chatTimer);
+        }, 5100);
       }
     });
   }
