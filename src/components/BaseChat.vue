@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex" :class="'justify-' + justify">
-    <v-card class="mb-10" min-width="250" max-width="500">
+    <v-card class="mb-10" min-width="200" max-width="500">
       <v-card-title>
         <slot></slot>
       </v-card-title>
