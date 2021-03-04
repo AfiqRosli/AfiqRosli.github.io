@@ -27,6 +27,11 @@ import Person from "@/enums/Person";
 import ChatFactory from "@/factories/ChatFactory";
 import { mapActions } from "vuex";
 
+export default {
+  methods: {
+    ...mapActions(["addChat", "replaceLoading"]),
+  }
+};
 </script>
 
 <style lang="scss" scoped>
