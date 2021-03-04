@@ -6,15 +6,7 @@
           <v-btn class="mr-5" @click="talkOnCV">CV</v-btn>
           <v-btn class="mr-5" @click="talkOnAbout">About</v-btn>
           <v-btn class="mr-5">Projects</v-btn>
-          <v-btn class="mr-10">
-            <a
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              target="_blank"
-              class="text-decoration-none"
-              style="color: inherit"
-              >Mystery Gift 🎁</a
-            >
-          </v-btn>
+          <v-btn class="mr-10" @click="sendMysteryGift">Mystery Gift 🎁</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -110,6 +102,61 @@ export default {
       setTimeout(() => {
         clearInterval(chatTimer);
       }, 20700);
+    },
+    async sendMysteryGift() {
+      await this.addChat(
+        new ChatFactory(Chat.TEXT, {
+          person: Person.YOU,
+          msg: "Mystery Gift 🎁"
+        })
+      );
+
+      this.$vuetify.goTo(9999, {
+        duration: 700,
+        easing: "easeInCubic"
+      });
+
+      let count = 0;
+      let chatContent = ["Incoming Gift in", "3", "2", "1"];
+      await this.addChat(new ChatFactory(Chat.LOADING));
+
+      // repeat with the interval of 1 seconds
+      let chatTimer = setInterval(async () => {
+        await this.replaceLoading(
+          new ChatFactory(Chat.TEXT, {
+            person: Person.ME,
+            msg: chatContent[count++]
+          })
+        );
+
+        if (count < chatContent.length) {
+          await this.addChat(new ChatFactory(Chat.LOADING));
+        }
+
+        this.$vuetify.goTo(9999, {
+          duration: 700,
+          easing: "easeInCubic"
+        });
+      }, 1000);
+
+      // after 4 seconds stop
+      // 1 * 4 as in 4 chat content at 1s interval
+      setTimeout(async () => {
+        clearInterval(chatTimer);
+
+        await this.addChat(
+          new ChatFactory(Chat.TEXT, {
+            person: Person.ME,
+            msg: "It be like that sometimes"
+          })
+        );
+
+        let mysteryLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        window.open(mysteryLink, "_blank") ||
+          (() => {
+            window.location.href = mysteryLink;
+          })();
+      }, 4000);
     }
   }
 };
