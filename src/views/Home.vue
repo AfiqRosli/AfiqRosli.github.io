@@ -11,7 +11,7 @@
                 </template>
 
                 <template v-if="chat.type == enums.Chat.TEXT">
-                  <template v-if="chat.person == enums.Person.ME">
+                  <template v-if="chat.person == enums.Person.ME && chat.msg">
                     <ChatMe :msg="chat.msg" :date="chat.date" />
                   </template>
 
