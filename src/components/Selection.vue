@@ -3,9 +3,18 @@
     <v-container>
       <v-row>
         <v-col offset="1" cols="10">
-          <v-btn class="mr-3">CV</v-btn>
-          <v-btn class="mr-3">About</v-btn>
-          <v-btn class="mr-10">Projects</v-btn>
+          <v-btn class="mr-5">CV</v-btn>
+          <v-btn class="mr-5">About</v-btn>
+          <v-btn class="mr-5">Projects</v-btn>
+          <v-btn class="mr-10">
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              class="text-decoration-none"
+              style="color: inherit"
+              >Mystery Gift 🎁</a
+            >
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
