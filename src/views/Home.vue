@@ -19,6 +19,12 @@
                     <ChatYou :msg="chat.msg" :date="chat.date" />
                   </template>
                 </template>
+
+                <template v-if="chat.type == enums.Chat.LOADING">
+                  <v-card class="mb-10" min-width="150" max-width="150">
+                    <v-card-text class="text-center">Typing...</v-card-text>
+                  </v-card>
+                </template>
               </div>
             </div>
           </div>
