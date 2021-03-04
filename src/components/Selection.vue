@@ -77,9 +77,9 @@ export default {
       let chatContent = [
         "Hmm, where do I begin?",
         "I recently finished my degree",
-        "Achieved Upper Second-Class Honours (2:1) in Computer Science",
-        "I see programming as my hobby and profession",
-        "(very thankful for that)",
+        "Got 2:1 in Computer Science",
+        "I consider programming as my hobby and career",
+        "What else",
         "In technical 'about'",
         "This website is done using Vue.js 2 & Vuetify",
         "P.S. my response is fixed and do treat yourself with the Mystery Gift 🎁"
