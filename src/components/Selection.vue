@@ -42,7 +42,7 @@ export default {
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
             msg:
-              "<a href='/files/afiq_rosli_software_engineer_cv_2021-03-03.pdf' target='_blank' download>Here you go</a>"
+              "<a class='text-decoration-none' href='/files/afiq_rosli_software_engineer_cv_2021-03-03.pdf' target='_blank' download>Here you go</a>"
           })
         );
 
