@@ -12,8 +12,8 @@ export default new Vuex.Store({
     CREATE_CHAT(state, chat) {
       state.chats.push(chat);
     },
-    REMOVE_CHAT_LOADING(state, payload) {
-      state.chats.splice(payload.chatIndex, 1);
+    REMOVE_CHAT_LOADING(state, chatIndex) {
+      state.chats.splice(chatIndex, 1);
     }
   },
   actions: {
@@ -30,21 +30,21 @@ export default new Vuex.Store({
     replaceLoading({ commit, dispatch, state }, chat) {
       return new Promise((resolve, reject) => {
         try {
-          let payload = {
-            chatIndex: null
-          };
+          let chatIndex = null;
 
           let chats = state.chats;
           let index = chats.length - 1;
           for (index; index >= 0; index--) {
             if (chats[index].type == Chat.LOADING) {
-              payload.chatIndex = index;
+              chatIndex = index;
 
               break;
             }
           }
 
-          commit("REMOVE_CHAT_LOADING", payload);
+          if (chatIndex) {
+            commit("REMOVE_CHAT_LOADING", chatIndex);
+          }
 
           (async () => {
             await dispatch("addChat", chat);
