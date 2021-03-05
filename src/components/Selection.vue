@@ -1,12 +1,48 @@
 <template>
-  <v-card class="text-right py-3 selection">
+  <v-card class="text-center text-md-right py-3 selection">
     <v-container>
       <v-row>
-        <v-col offset="1" cols="10">
-          <v-btn class="mr-5" @click="talkOnCV">CV</v-btn>
-          <v-btn class="mr-5" @click="talkOnAbout">About</v-btn>
-          <v-btn class="mr-5" @click="talkOnProject">Projects</v-btn>
-          <v-btn class="mr-10" @click="sendMysteryGift">Mystery Gift 🎁</v-btn>
+        <v-col offset="0" offset-md="1" cols="12" md="10">
+          <div v-if="!this.$vuetify.breakpoint.xs">
+            <v-btn class="mr-5" @click="talkOnCV">CV</v-btn>
+            <v-btn class="mr-5" @click="talkOnAbout">About</v-btn>
+            <v-btn class="mr-5" @click="talkOnProject">Projects</v-btn>
+            <v-btn class="mr-0 mr-md-10" @click="sendMysteryGift"
+              >Mystery Gift 🎁</v-btn
+            >
+          </div>
+
+          <v-menu v-else top>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                Reply
+              </v-btn>
+            </template>
+
+            <v-list>
+              <v-list-item>
+                <v-list-item-title @click="talkOnCV">CV</v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title @click="talkOnAbout"
+                  >About</v-list-item-title
+                >
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title @click="talkOnProject"
+                  >Projects</v-list-item-title
+                >
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title @click="sendMysteryGift"
+                  >Mystery Gift 🎁</v-list-item-title
+                >
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </v-col>
       </v-row>
     </v-container>
