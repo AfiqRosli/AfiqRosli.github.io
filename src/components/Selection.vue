@@ -5,7 +5,7 @@
         <v-col offset="1" cols="10">
           <v-btn class="mr-5" @click="talkOnCV">CV</v-btn>
           <v-btn class="mr-5" @click="talkOnAbout">About</v-btn>
-          <v-btn class="mr-5">Projects</v-btn>
+          <v-btn class="mr-5" @click="talkOnProject">Projects</v-btn>
           <v-btn class="mr-10" @click="sendMysteryGift">Mystery Gift 🎁</v-btn>
         </v-col>
       </v-row>
@@ -102,6 +102,53 @@ export default {
       setTimeout(() => {
         clearInterval(chatTimer);
       }, 20700);
+    },
+    async talkOnProject() {
+      await this.addChat(
+        new ChatFactory(Chat.TEXT, {
+          person: Person.YOU,
+          msg: "Projects"
+        })
+      );
+
+      this.$vuetify.goTo(9999, {
+        duration: 700,
+        easing: "easeInCubic"
+      });
+
+      let count = 0;
+      let chatContent = [
+        "I've done various projects",
+        "For my own use and clients",
+        "Frameworks ranging from Vue, Laravel, ASP.NET, etc.",
+        "<a onClick=\"{ let vue =document.querySelector('#app').__vue__; vue.$router.push({path: '/project'}) }\">More info here</a>"
+      ];
+      await this.addChat(new ChatFactory(Chat.LOADING));
+
+      // repeat with the interval of 1.3 seconds
+      let chatTimer = setInterval(async () => {
+        await this.replaceLoading(
+          new ChatFactory(Chat.TEXT, {
+            person: Person.ME,
+            msg: chatContent[count++]
+          })
+        );
+
+        if (count < chatContent.length) {
+          await this.addChat(new ChatFactory(Chat.LOADING));
+        }
+
+        this.$vuetify.goTo(9999, {
+          duration: 700,
+          easing: "easeInCubic"
+        });
+      }, 1300);
+
+      // after 5.2 seconds stop
+      // 1.3 * 4 as in 4 chat content at 1.3s interval
+      setTimeout(async () => {
+        clearInterval(chatTimer);
+      }, 5200);
     },
     async sendMysteryGift() {
       await this.addChat(
