@@ -16,7 +16,7 @@
           </v-icon>
         </a>
       </v-btn>
-      <v-btn icon class="ml-n2">
+      <v-btn icon class="ml-n1">
         <a
           class="text-decoration-none"
           href="https://www.instagram.com/afiq_rosli.97/"
