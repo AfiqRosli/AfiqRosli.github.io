@@ -114,8 +114,13 @@ export default {
       ];
       await this.addChat(new ChatFactory(Chat.LOADING));
 
-      // repeat with the interval of 2.3 seconds
+      // repeat with the interval of 2 seconds
       let chatTimer = setInterval(async () => {
+        // All text content are delivered
+        if (count >= chatContent.length) {
+          clearInterval(chatTimer);
+        }
+
         await this.replaceLoading(
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
@@ -131,13 +136,7 @@ export default {
           duration: 700,
           easing: "easeInCubic"
         });
-      }, 2300);
-
-      // after 20.7 seconds stop
-      // 2.3 * 9 as in 9 chat content at 2.3s interval
-      setTimeout(() => {
-        clearInterval(chatTimer);
-      }, 20700);
+      }, 2000);
     },
     async talkOnProject() {
       await this.addChat(
@@ -163,6 +162,11 @@ export default {
 
       // repeat with the interval of 1.3 seconds
       let chatTimer = setInterval(async () => {
+        // All text content are delivered
+        if (count >= chatContent.length) {
+          clearInterval(chatTimer);
+        }
+
         await this.replaceLoading(
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
@@ -179,12 +183,6 @@ export default {
           easing: "easeInCubic"
         });
       }, 1300);
-
-      // after 5.2 seconds stop
-      // 1.3 * 4 as in 4 chat content at 1.3s interval
-      setTimeout(async () => {
-        clearInterval(chatTimer);
-      }, 5200);
     },
     async sendMysteryGift() {
       await this.addChat(
@@ -205,6 +203,24 @@ export default {
 
       // repeat with the interval of 1 seconds
       let chatTimer = setInterval(async () => {
+        // All text content are delivered
+        if (count >= chatContent.length) {
+          clearInterval(chatTimer);
+
+          let mysteryLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+          window.open(mysteryLink, "_blank") ||
+            (() => {
+              window.location.href = mysteryLink;
+            })();
+
+          await this.addChat(
+            new ChatFactory(Chat.TEXT, {
+              person: Person.ME,
+              msg: "It be like that sometimes"
+            })
+          );
+        }
+
         await this.replaceLoading(
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
@@ -221,25 +237,6 @@ export default {
           easing: "easeInCubic"
         });
       }, 1000);
-
-      // after 4 seconds stop
-      // 1 * 4 as in 4 chat content at 1s interval
-      setTimeout(async () => {
-        clearInterval(chatTimer);
-
-        await this.addChat(
-          new ChatFactory(Chat.TEXT, {
-            person: Person.ME,
-            msg: "It be like that sometimes"
-          })
-        );
-
-        let mysteryLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        window.open(mysteryLink, "_blank") ||
-          (() => {
-            window.location.href = mysteryLink;
-          })();
-      }, 4000);
     }
   }
 };

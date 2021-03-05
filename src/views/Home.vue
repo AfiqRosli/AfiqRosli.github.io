@@ -83,6 +83,11 @@ export default {
 
         // repeat with the interval of 1.7 seconds
         let chatTimer = setInterval(async () => {
+          // All text content are delivered
+          if (count >= chatContent.length) {
+            clearInterval(chatTimer);
+          }
+
           await this.replaceLoading(
             new ChatFactory(Chat.TEXT, {
               person: Person.ME,
@@ -99,12 +104,6 @@ export default {
             easing: "easeInCubic"
           });
         }, 1700);
-
-        // after 5.1 seconds stop
-        // 1.7 * 3 as in 3 chat content at 1.7s interval
-        setTimeout(() => {
-          clearInterval(chatTimer);
-        }, 5100);
       }
     });
   }
