@@ -1,6 +1,22 @@
 <template>
   <v-container>
-    <h1 class="text-center my-10">Projects</h1>
+    <v-breadcrumbs
+      :items="[
+        {
+          text: 'Home',
+          disabled: false,
+          to: '/'
+        },
+        {
+          text: 'Project',
+          disabled: true
+        }
+      ]"
+      divider="/"
+      large
+    ></v-breadcrumbs>
+
+    <h1 class="text-center mb-10">Projects</h1>
 
     <TextSeparator text="2021"></TextSeparator>
     <ProjectContainer>
