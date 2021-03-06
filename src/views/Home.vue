@@ -61,7 +61,7 @@ export default {
     chats: state => state.chats
   }),
   methods: {
-    ...mapActions(["addChat", "replaceLoading"])
+    ...mapActions(["addChat", "replaceLoading", "updateIsTyping"])
   },
   mounted() {
     this.$nextTick(async () => {
@@ -86,6 +86,8 @@ export default {
           // All text content are delivered
           if (count >= chatContent.length) {
             clearInterval(chatTimer);
+
+            this.updateIsTyping(false);
           }
 
           await this.replaceLoading(
@@ -104,6 +106,8 @@ export default {
             easing: "easeInCubic"
           });
         }, 1700);
+      } else {
+        this.updateIsTyping(false);
       }
     });
   }

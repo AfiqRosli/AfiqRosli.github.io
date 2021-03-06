@@ -6,7 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    chats: []
+    chats: [],
+    isTyping: true
   },
   mutations: {
     CREATE_CHAT(state, chat) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     REMOVE_CHAT_LOADING(state, chatIndex) {
       state.chats.splice(chatIndex, 1);
+    },
+    SET_IS_TYPING(state, isTyping) {
+      state.isTyping = isTyping;
     }
   },
   actions: {
@@ -55,6 +59,9 @@ export default new Vuex.Store({
           reject(error);
         }
       });
+    },
+    updateIsTyping({ commit }, isTyping) {
+      commit("SET_IS_TYPING", isTyping);
     }
   }
 });

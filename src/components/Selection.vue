@@ -4,17 +4,31 @@
       <v-row>
         <v-col offset="0" offset-md="1" cols="12" md="10">
           <div v-if="!this.$vuetify.breakpoint.xs">
-            <v-btn class="mr-5" @click="talkOnCV">CV</v-btn>
-            <v-btn class="mr-5" @click="talkOnAbout">About</v-btn>
-            <v-btn class="mr-5" @click="talkOnProject">Projects</v-btn>
-            <v-btn class="mr-0 mr-md-10" @click="sendMysteryGift"
+            <v-btn class="mr-5" :disabled="isTyping" @click="talkOnCV"
+              >CV</v-btn
+            >
+            <v-btn class="mr-5" :disabled="isTyping" @click="talkOnAbout"
+              >About</v-btn
+            >
+            <v-btn class="mr-5" :disabled="isTyping" @click="talkOnProject"
+              >Projects</v-btn
+            >
+            <v-btn
+              class="mr-0 mr-md-10"
+              :disabled="isTyping"
+              @click="sendMysteryGift"
               >Mystery Gift 🎁</v-btn
             >
           </div>
 
           <v-menu v-else top>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn color="primary" dark v-bind="attrs" v-on="on">
+              <v-btn
+                :disabled="isTyping"
+                color="primary"
+                v-bind="attrs"
+                v-on="on"
+              >
                 Reply
               </v-btn>
             </template>
@@ -53,12 +67,17 @@
 import Chat from "@/enums/Chat";
 import Person from "@/enums/Person";
 import ChatFactory from "@/factories/ChatFactory";
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
+  computed: mapState({
+    isTyping: state => state.isTyping
+  }),
   methods: {
-    ...mapActions(["addChat", "replaceLoading"]),
+    ...mapActions(["addChat", "replaceLoading", "updateIsTyping"]),
     async talkOnCV() {
+      this.updateIsTyping(true);
+
       await this.addChat(
         new ChatFactory(Chat.TEXT, {
           person: Person.YOU,
@@ -74,6 +93,8 @@ export default {
       await this.addChat(new ChatFactory(Chat.LOADING));
 
       setTimeout(async () => {
+        this.updateIsTyping(false);
+
         await this.replaceLoading(
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
@@ -89,6 +110,8 @@ export default {
       }, 750);
     },
     async talkOnAbout() {
+      this.updateIsTyping(true);
+
       await this.addChat(
         new ChatFactory(Chat.TEXT, {
           person: Person.YOU,
@@ -118,6 +141,7 @@ export default {
       let chatTimer = setInterval(async () => {
         // All text content are delivered
         if (count >= chatContent.length) {
+          this.updateIsTyping(false);
           clearInterval(chatTimer);
         }
 
@@ -139,6 +163,8 @@ export default {
       }, 2000);
     },
     async talkOnProject() {
+      this.updateIsTyping(true);
+
       await this.addChat(
         new ChatFactory(Chat.TEXT, {
           person: Person.YOU,
@@ -164,6 +190,7 @@ export default {
       let chatTimer = setInterval(async () => {
         // All text content are delivered
         if (count >= chatContent.length) {
+          this.updateIsTyping(false);
           clearInterval(chatTimer);
         }
 
@@ -185,6 +212,8 @@ export default {
       }, 1300);
     },
     async sendMysteryGift() {
+      this.updateIsTyping(true);
+
       await this.addChat(
         new ChatFactory(Chat.TEXT, {
           person: Person.YOU,
@@ -219,6 +248,8 @@ export default {
               msg: "It be like that sometimes"
             })
           );
+
+          this.updateIsTyping(false);
         }
 
         await this.replaceLoading(
