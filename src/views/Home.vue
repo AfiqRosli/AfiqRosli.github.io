@@ -48,6 +48,9 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Home",
+  metaInfo: {
+    title: "Home"
+  },
   components: { ChatMe, ChatYou, When, Selection },
   data() {
     return {

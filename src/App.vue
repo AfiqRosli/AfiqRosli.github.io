@@ -9,6 +9,17 @@
 <script>
 export default {
   name: "App",
+  metaInfo: {
+    title: "Afiq Rosli | Portfolio",
+    titleTemplate: "Afiq Rosli | Portfolio | %s",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Afiq Rosli portfolio website. I do web development using the JAMstack approach. Check out the projects I've built or involved in the making."
+      }
+    ]
+  },
   data: () => ({
     //
   })

@@ -126,6 +126,9 @@ import ProjectContainer from "@/components/ProjectContainer";
 import ProjectCard from "@/components/ProjectCard";
 
 export default {
+  metaInfo: {
+    title: "Projects"
+  },
   components: { TextSeparator, ProjectContainer, ProjectCard }
 };
 </script>
