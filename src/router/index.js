@@ -24,11 +24,11 @@ const router = new VueRouter({
   routes,
   scrollBehavior() {
     if (this.currentRoute.name == "Home") {
-      return { x: 9999, y: 9999, behavior: "smooth" };
+      return { x: 9999, y: 9999 };
     }
 
     if (this.currentRoute.name == "Project") {
-      return { x: 0, y: 0, behavior: "smooth" };
+      return { x: 0, y: 0 };
     }
   }
 });
