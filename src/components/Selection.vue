@@ -99,7 +99,7 @@ export default {
           new ChatFactory(Chat.TEXT, {
             person: Person.ME,
             msg:
-              "<a class='text-decoration-none' href='/files/afiq_rosli_software_engineer_cv_2021-03-03.pdf' target='_blank' download>Here you go</a>"
+              "Here you go <a class='text-decoration-none' href='/files/afiq_rosli_software_engineer_cv_2021-03-03.pdf' target='_blank'>Download CV</a>"
           })
         );
 
@@ -127,10 +127,10 @@ export default {
       let count = 0;
       let chatContent = [
         "Hmm, where do I begin?",
-        "I recently finished my degree",
+        "Recently finished my degree",
         "Got 2:1 in Computer Science",
-        "I consider programming as my hobby and career",
-        "What else",
+        "See programming as my hobby and career",
+        "What else...",
         "In technical 'about'",
         "This website is done using Vue.js 2 & Vuetify",
         "P.S. my response is fixed and do treat yourself with the Mystery Gift 🎁"
@@ -179,14 +179,14 @@ export default {
 
       let count = 0;
       let chatContent = [
-        "I've done various projects",
-        "For my own use and clients",
-        "Frameworks ranging from Vue, Laravel, ASP.NET, etc.",
-        "<a onClick=\"{ let vue =document.querySelector('#app').__vue__; vue.$router.push({path: '/project'}) }\">More info here</a>"
+        "I've done (and involved) in various projects",
+        "From fun little projects to industry level website used by thousands",
+        "Worked on multiple frameworks, e.g. Vue, Vuetify, Laravel, Bootstrap & ASP.NET",
+        "<a onClick=\"{ let vue =document.querySelector('#app').__vue__; vue.$router.push({path: '/project'}) }\">View projects</a>"
       ];
       await this.addChat(new ChatFactory(Chat.LOADING));
 
-      // repeat with the interval of 1.3 seconds
+      // repeat with the interval of 2.1 seconds
       let chatTimer = setInterval(async () => {
         // All text content are delivered
         if (count >= chatContent.length) {
@@ -209,7 +209,7 @@ export default {
           duration: 700,
           easing: "easeInCubic"
         });
-      }, 1300);
+      }, 2100);
     },
     async sendMysteryGift() {
       this.updateIsTyping(true);
