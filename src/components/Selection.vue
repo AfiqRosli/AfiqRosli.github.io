@@ -7,11 +7,12 @@
             <v-btn class="mr-5" :disabled="isTyping" @click="talkOnCV"
               >CV</v-btn
             >
-            <v-btn class="mr-5" :disabled="isTyping" @click="talkOnAbout"
-              >About</v-btn
-            >
+
             <v-btn class="mr-5" :disabled="isTyping" @click="talkOnProject"
               >Projects</v-btn
+            >
+            <v-btn class="mr-5" :disabled="isTyping" @click="talkOnAbout"
+              >About</v-btn
             >
             <v-btn
               class="mr-0 mr-md-10"
@@ -39,14 +40,14 @@
               </v-list-item>
 
               <v-list-item>
-                <v-list-item-title @click="talkOnAbout"
-                  >About</v-list-item-title
+                <v-list-item-title @click="talkOnProject"
+                  >Projects</v-list-item-title
                 >
               </v-list-item>
 
               <v-list-item>
-                <v-list-item-title @click="talkOnProject"
-                  >Projects</v-list-item-title
+                <v-list-item-title @click="talkOnAbout"
+                  >About</v-list-item-title
                 >
               </v-list-item>
 
