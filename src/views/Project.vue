@@ -38,12 +38,8 @@
       >
       </ProjectCard>
 
-      <ProjectCard
-        title="Stay Tuned"
-        subtitle="Work In Progress"
-        src="placeholder.png"
-        >Can only be disclose once the project is released as agreed with the
-        client
+      <ProjectCard title="???" subtitle="Work In Progress" src="placeholder.png"
+        >???
       </ProjectCard>
     </ProjectContainer>
 
