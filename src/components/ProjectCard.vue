@@ -14,6 +14,10 @@
 
     <v-card-text class="text--primary">
       <p><slot></slot></p>
+
+      <p class="mb-n5">
+        <slot name="note"> </slot>
+      </p>
     </v-card-text>
 
     <v-card-actions>
