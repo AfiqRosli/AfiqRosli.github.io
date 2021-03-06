@@ -21,7 +21,16 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior() {
+    if (this.currentRoute.name == "Home") {
+      return { x: 9999, y: 9999, behavior: "smooth" };
+    }
+
+    if (this.currentRoute.name == "Project") {
+      return { x: 0, y: 0, behavior: "smooth" };
+    }
+  }
 });
 
 export default router;
