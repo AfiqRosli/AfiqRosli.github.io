@@ -21,6 +21,18 @@
     </v-card-text>
 
     <v-card-actions>
+      <v-btn v-if="link_play" color="primary" text>
+        <a class="text-decoration-none" :href="link_play" target="_blank"
+          >Play</a
+        >
+      </v-btn>
+
+      <v-btn v-if="link_itch_io" color="primary" text>
+        <a class="text-decoration-none" :href="link_itch_io" target="_blank"
+          >Itch.io</a
+        >
+      </v-btn>
+
       <v-btn v-if="link_website" color="primary" text>
         <a class="text-decoration-none" :href="link_website" target="_blank"
           >Website</a
@@ -72,6 +84,12 @@ export default {
       type: String
     },
     link_ig_post: {
+      type: String
+    },
+    link_play: {
+      type: String
+    },
+    link_itch_io: {
       type: String
     }
   }

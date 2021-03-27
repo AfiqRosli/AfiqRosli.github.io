@@ -62,6 +62,7 @@
       <ProjectCard
         title="Squarescape"
         src="squarescape.png"
+        link_itch_io="https://afiqrosli.itch.io/squarescape"
         link_ig_post="https://www.instagram.com/p/CJfw1P8BBLQ/"
       >
         This game was made a day before our (my families) annual end of year
@@ -165,6 +166,7 @@
       <ProjectCard
         title="Words Overdue"
         src="words_overdue.png"
+        link_play="https://afiqrosli.github.io/Words-Overdue/"
         link_ig_post="https://www.instagram.com/p/BbSEJKnhBqb/"
       >
         A typing game that runs on the browser; written in JavaScript. The
