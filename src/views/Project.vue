@@ -167,6 +167,7 @@
         title="Words Overdue"
         src="words_overdue.png"
         link_play="https://afiqrosli.github.io/Words-Overdue/"
+        link_itch_io="https://afiqrosli.itch.io/words-overdue"
         link_ig_post="https://www.instagram.com/p/BbSEJKnhBqb/"
       >
         A typing game that runs on the browser; written in JavaScript. The
